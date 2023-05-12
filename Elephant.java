@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Elephant here.
+ * Elephant is the character
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author David
+ * @version May 12 2023
  */
 public class Elephant extends Actor
 {
@@ -14,6 +14,15 @@ public class Elephant extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        if(Greenfoot.isKeyDown("left"))
+        {
+            move(-3);
+        }
+        else if(Greenfoot.isKeyDown("right"))
+        {
+            move(3);
+        }
+        
+        removeTouching(Pizza.class);
     }    
 }

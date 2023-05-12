@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * World where Elephant does stuff
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author David 
+ * @version May 12 2023
  */
 public class MyWorld extends World
 {
@@ -17,5 +17,10 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        Elephant elephant = new Elephant();
+        addObject(elephant, 300, 200);
+        
+        Pizza pizza = new Pizza();
+        addObject(pizza, 300, 0);
     }
 }
