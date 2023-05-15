@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    public int score = 0;
+    Label scoreLabel;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -16,11 +17,33 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        super(600, 400, 1, false);
         Elephant elephant = new Elephant();
-        addObject(elephant, 300, 200);
-        
+        addObject(elephant, 300, 300);
+        // making a label
+        scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, 50, 50);
+        createPizza();
+    }
+    //end the game with gameover message
+    public void gameOver()
+    {
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 200);
+    }
+    //method to keep track of score
+    public void increaseScore()
+    {
+        score++;
+        scoreLabel.setValue(score);
+    }
+
+    //making the apple change position at the top of screen every time program is runned
+    public void createPizza()
+    {
         Pizza pizza = new Pizza();
-        addObject(pizza, 300, 0);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(pizza, x, y);
     }
 }

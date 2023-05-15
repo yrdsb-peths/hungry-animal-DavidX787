@@ -15,5 +15,13 @@ public class Pizza extends Actor
     public void act() 
     {
         setLocation(getX(), getY() + 1);
+        
+        //remove apple when apple makes it to the bottom
+        MyWorld world = (MyWorld) getWorld();
+        if(getY() >=world.getHeight())
+        {
+            world.gameOver();
+            world.removeObject(this);
+        }
     }    
 }
