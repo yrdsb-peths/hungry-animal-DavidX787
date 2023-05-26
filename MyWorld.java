@@ -22,7 +22,7 @@ public class MyWorld extends World
         addObject(elephant, 300, 300);
         // making a label
         scoreLabel = new Label(0, 80);
-        addObject(scoreLabel, 50, 50);
+        addObject(scoreLabel, 100, 100);
         createPizza();
     }
     //end the game with gameover message
